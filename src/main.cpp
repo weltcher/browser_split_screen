@@ -14,8 +14,8 @@
 
 int main(int argc, char *argv[])
 {
-    // Qt WebEngine Configuration Adjustments - Disable GPU and network issues
-    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", "--disable-gpu --disable-software-rasterizer --no-sandbox --disable-gpu-sandbox --disable-web-security --ignore-certificate-errors --disable-features=VizDisplayCompositor --disable-background-timer-throttling --disable-history-quick-provider");
+    // Qt WebEngine Configuration Adjustments - Enable GPU acceleration
+    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", "--enable-gpu --enable-accelerated-2d-canvas --enable-gpu-rasterization --enable-zero-copy --enable-webgl --no-sandbox --disable-web-security --ignore-certificate-errors --disable-background-timer-throttling --disable-history-quick-provider");
     qputenv("QT_LOGGING_RULES", "qt.webengine.*.debug=false;qt.webenginecontext.debug=false");  // Suppress warnings, but keep fatal
     qputenv("QTWEBENGINE_LOG_ENABLED", "true");  // FIXED: Enable stderr logging for Backend errors
     
